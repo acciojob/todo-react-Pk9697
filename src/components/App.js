@@ -25,9 +25,9 @@ const App = () => {
 			/>
 			<button onClick={handleAddTodo}>Add Todo</button>
 
-			{todos.map((todo) => (
-				<ul key={todo.id} className='todo'>
-					<li>
+			<ul className='todos'>
+				{todos.map((todo) => (
+					<li key={todo.id}>
 						<p>{todo.text}</p>
 						<button
 							onClick={() => setTodos(todos.filter((t) => t.id !== todo.id))}
@@ -35,8 +35,8 @@ const App = () => {
 							Delete
 						</button>
 					</li>
-				</ul>
-			))}
+				))}
+			</ul>
 		</div>
 	)
 }
